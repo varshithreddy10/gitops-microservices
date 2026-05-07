@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: nginx-deployment
   namespace: test
 
 spec:
-  replicas: 2
+  replicas: 4
 
   selector:
     matchLabels:
@@ -23,12 +24,3 @@ spec:
 
         ports:
         - containerPort: 80
-
-        resources:
-          requests:
-            cpu: "100m"
-            memory: "128Mi"
-
-          limits:
-            cpu: "200m"
-            memory: "256Mi"
